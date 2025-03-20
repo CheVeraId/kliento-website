@@ -1,2 +1,3 @@
-# kliento-website
-Kliento website
+# Kliento website
+
+Run locally with `npm start`.
