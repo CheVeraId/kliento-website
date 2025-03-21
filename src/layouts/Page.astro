@@ -1,0 +1,25 @@
+---
+import { z } from "astro:content";
+
+import Skeleton from "./Skeleton.astro";
+
+interface Frontmatter {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  frontmatter?: Frontmatter;
+}
+
+const schema = z.object({
+  title: z.string(),
+  description: z.string(),
+});
+
+const { title, description } = schema.parse(Astro.props.frontmatter);
+---
+
+<Skeleton title={title} description={description}>
+  <slot />
+</Skeleton>
